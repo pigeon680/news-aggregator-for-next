@@ -4,7 +4,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { fetchNews } from "./lib/fetchNews";
-
+// import blobImage from "../assets/blob.jpg";
+import Image from "next/image";
 export default function Home() {
     const [articles, setArticles] = useState([]);
     const [category, setCategory] = useState("technology");
@@ -34,7 +35,10 @@ export default function Home() {
     }, [category, page, source, searchQuery]);
 
     return (
-        <div className="container mt-4">
+        <div className="p-4 max-w-6xl mx-auto bodysize" style={{backgroundColor: 'aliceblue'}}>
+            <div style={{textAlign:'center'}}>
+                <Image src="/blob.jpg" width={120} height={30}/>;
+            </div>
             <h1 className="text-center mb-4 text-success">News Aggregator</h1>
             {/* {Filtering Source} */}
             <div className="mb-3">
