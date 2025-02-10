@@ -17,7 +17,7 @@ __turbopack_esm__({
     "API_KEYS": (()=>API_KEYS)
 });
 const API_KEYS = [
-    "eb29885f8b013973fb7979547f076747",
+    // "eb29885f8b013973fb7979547f076747",  //GNews
     "97ae0d88962148c4afd1182f23db2a44",
     "9a5bad17402b46f59de433786b7777eb"
 ];
@@ -135,7 +135,6 @@ const pageSize = 40;
 const fetchNews = async (category = "technology", page = 1, selectedSource = "bbc-news", index = 0, searchQuery = "latest")=>{
     try {
         const url = `https://newsapi.org/v2/everything?q=${category}&keyword=${searchQuery || "latest"}&pageSize=${pageSize}&page=${page}&sources=${selectedSource}&apiKey=${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["API_KEYS"][index]}`;
-        // const url = `https://gnews.io/api/v4/top-headlines?q=${category}&keyword=${searchQuery || "latest"}&pageSize=${pageSize}&page=${page}&sources=${selectedSource}&apiKey=${API_KEYS[index]}`;
         console.log(searchQuery);
         const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(url);
         return response.data;

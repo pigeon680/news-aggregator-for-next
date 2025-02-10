@@ -101,7 +101,7 @@ body {
 }
 
 .bodysize {
-  width: 40%;
+  width: 80%;
 }
 
 @media (width <= 765px) {
